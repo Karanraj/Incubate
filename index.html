@@ -8,7 +8,8 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer"></script>
+     <style>.operative { font-weight: bold; border:1px solid yellow }</style>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -45,7 +46,17 @@
         </section>
       </div>
     </div>
-
-  
+   <!--Testing Pretty Code --> 
+   <?prettify lang=html linenums=true?>
+<pre class="prettyprint" id="quine" style="border:4px solid #88c">
+  <script>
+    //<![CDATA[
+    (function () {
+      function html(s) {
+        return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+    });
+  </script>
+  </pre>
   </body>
 </html>
