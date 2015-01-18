@@ -1,2 +1,8 @@
 /* Styles go here */
 
+ .nav-tabs > li.active > a,
+        .nav-tabs > li.active > a:hover,
+        .nav-tabs > li.active > a:focus{
+            color: #555555;
+            background-color: red;  
+        } 
