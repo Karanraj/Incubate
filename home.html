@@ -1,141 +1,189 @@
-
 <head>
-<meta charset="UTF-8">
-<title>Salesforce FAQ</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="/resources/styles/style.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<style type="text/css">
-	.bs-example{
-		margin: 20px;
-	}
- ul.nav {
-  background-color: #ffffff;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), 		 to(#999999));
-  background-image: -webkit-linear-gradient(top, #ffffff, #e9e9e9);
-  background-image:    -moz-linear-gradient(top, #ffffff, #e9e9e9);
-  background-image:      -o-linear-gradient(top, #ffffff, #e9e9e9);
-  background-image:         linear-gradient(to bottom, #ffffff, #e9e9e9);
- }
-</style>
+  <meta charset="UTF-8">
+  <title>Salesforce FAQ</title>
+  <link rel="stylesheet" href="/resources/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="/resources/styles/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="/resources/styles/style.css">
+  <script src="/resources/js/jquery.min.js"></script>
+  <script src="/resources/js/bootstrap.min.js"></script>
 </head>
+
 <body>
- <!-- Static navbar -->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/index.html">Force Incubator | Salesforce FAQ for Interview </a>
+  <!-- Static navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/index.html">Force Incubator | Salesforce FAQ for Interview </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://developer.salesforce.com/trailhead">Trailhead</a>
+          </li>
+          <li><a href="http://salesforce.stackexchange.com/">StackExchange</a>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#sectionApex">APEX</a>
+    </li>
+    <li><a data-toggle="tab" href="#sectionVF">VISUALFORCE</a>
+    </li>
+    <li><a data-toggle="tab" href="#sectionS1">Salesforce1 Mobile</a>
+    </li>
+  </ul>
+  <!-- end of Header tab -->
+
+  <!-- Start of Apex section -->
+
+  <div class="tab-content">
+    <div id="sectionApex" class="tab-pane fade in active">
+
+      <div class="panel-group" id="accordionApex">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordionApex" href="#collapseOne">1. What is HTML?</a>
+                </h4>
           </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="http://developer.salesforce.com/trailhead">Trailhead</a></li>
-              <li><a href="http://salesforce.stackexchange.com/">StackExchange</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
-      
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#sectionA">APEX</a></li>
-        <li><a data-toggle="tab" href="#sectionB">VISUALFORCE</a></li>
-    </ul>
-	<!-- end of Header tab -->
-    
-    <!-- Start of Apex section -->
-    
-    <div class="tab-content">
-        <div id="sectionA" class="tab-pane fade in active">
-            
-            <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. What is HTML?</a>
-                </h4>
+          <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <p>HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages. <a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a>
+              </p>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    <p>HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages. <a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>
-                </div>
-            </div>
+          </div>
         </div>
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. What is Twitter Bootstrap?</a>
+          <div class="panel-heading">
+            <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordionApex" href="#collapseTwo">2. What is Twitter Bootstrap?</a>
                 </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>Twitter Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a>
+              </p>
             </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>Twitter Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
-                </div>
-            </div>
+          </div>
         </div>
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. What is CSS?</a>
+          <div class="panel-heading">
+            <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordionApex" href="#collapseThree">3. What is CSS?</a>
                 </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="http://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a>
+              </p>
             </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="http://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-        </div>
     <!-- end of Apex -->
-        
-    <!-- Visualforce section --> 
-    <div id="sectionB" class="tab-pane fade">
-        <div class="panel-group" id="accordion2">
+
+    <!-- Visualforce section -->
+    <div id="sectionVF" class="tab-pane fade">
+      <div class="panel-group" id="accordionVF">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion2" href="#collapseOne1">1. What is HTML?</a>
+          <div class="panel-heading">
+            <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordionVF" href="#collapseOneVF">1. What is HTML?</a>
                 </h4>
+          </div>
+          <div id="collapseOneVF" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <p>HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages. <a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a>
+              </p>
             </div>
-            <div id="collapseOne1" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    <p>HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages. <a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>
-                </div>
-            </div>
+          </div>
         </div>
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo1">2. What is Twitter Bootstrap?</a>
+          <div class="panel-heading">
+            <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordionVF" href="#collapseTwoVF">2. What is Twitter Bootstrap?</a>
                 </h4>
+          </div>
+          <div id="collapseTwoVF" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>Twitter Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a>
+              </p>
             </div>
-            <div id="collapseTwo1" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>Twitter Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
-                </div>
-            </div>
+          </div>
         </div>
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion2" href="#collapseThree1">3. What is CSS?</a>
+          <div class="panel-heading">
+            <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordionVF" href="#collapseThreeVF">3. What is CSS?</a>
                 </h4>
+          </div>
+          <div id="collapseThreeVF" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="http://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a>
+              </p>
             </div>
-            <div id="collapseThree1" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="http://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-   </div>
- </div>  
- </div>
-</body>    
+    <!-- End of VF section -->
+
+    <!-- Start of Salesforce1 section -->
+    <div id="sectionS1" class="tab-pane fade">
+      <div class="panel-group" id="accordionS1">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordionS1" href="#collapseOneS1">1. What is HTML?</a>
+                </h4>
+          </div>
+          <div id="collapseOneS1" class="panel-collapse collapse in">
+            <div class="panel-body">
+              <p>HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages. <a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordionS1" href="#collapseTwoS1">2. What is Twitter Bootstrap?</a>
+                </h4>
+          </div>
+          <div id="collapseTwoS1" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>Twitter Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordionS1" href="#collapseThreeS1">3. What is CSS?</a>
+                </h4>
+          </div>
+          <div id="collapseThreeS1" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="http://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Salesforce1 section -->
+
+  </div>
+</body>
