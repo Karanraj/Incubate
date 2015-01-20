@@ -1,5 +1,6 @@
 // Code goes here
-// Remove gist frame
 
+// Remove gist frame
+$('.gist-meta').remove();
 
 
