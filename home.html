@@ -4,9 +4,9 @@
   <link rel="stylesheet" href="resources/styles/bootstrap.min.css">
   <link rel="stylesheet" href="resources/styles/bootstrap-theme.min.css">
   <link rel="stylesheet" href="resources/styles/style.css">
-  <link rel="stylesheet" href="resources/styles/prism.css"  />
   <script src="resources/js/jquery.min.js"></script>
   <script src="resources/js/bootstrap.min.js"></script>
+ 
 </head>
 
 <body>
@@ -60,24 +60,7 @@
           <div id="collapseOne" class="panel-collapse collapse in">
             <div class="panel-body">
               <p>HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages. <a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a>
-              </p>
-              <p>The below example is using prism syntax highlighter
-                    <pre class="line-numbers" data-start="1">
-                    <code class="language-java" > trigger efficientSOQL on Invoice_Statement__c(before insert,before update)
-                    {
-                    //perform SOQL query outside the for loop
-                    //This query runs once for all item in the Trigger.new
-                     List<Invoice_Statement__c> invoicewithLineItems = [Select Id,(select Id from Line_Item__r) From Invoice_Statement__c where Id IN : Trigger.newMap.KeySet()];
-                     for(Invoice_statement__c inv : invoicewithLineItems)
-                     {
-                     	for(Line_Item__c li:inv.LineItem__r)
-                     	{
-                     	//do any operation
-                     	}
-                     }
-                     }
-                    </code>
-                    </pre>
+              </p><script src="https://gist.github.com/mailtoharshit/f1af02936d317595abed.js"></script>
             </div>
           </div>
         </div>
@@ -91,8 +74,6 @@
             <div class="panel-body">
               <p>Twitter Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a>
               </p>
-              <p></p>Below code is from github gist</p>
-                    <script src="https://gist.github.com/Karanraj/7d231386e20d357884dc.js"></script>
             </div>
           </div>
         </div>
@@ -126,15 +107,6 @@
             <div class="panel-body">
               <p>HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages. <a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a>
               </p>
-              <p>Visualforce page code in prism window</p>
-                    <pre>
-                    <code class="language-markup">
-
-                    <apex:page showHeader="true" sidebar="true" docType="html-5.0"  standardStylesheets="false">
-						  
-						</apex:page>
-					</code>
-					</pre>
             </div>
           </div>
         </div>
@@ -148,8 +120,6 @@
             <div class="panel-body">
               <p>Twitter Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a>
               </p>
-              <p>Below is the sample visualforce page code from gist iframe window.</p>
-                    <script src="https://gist.github.com/Karanraj/31b68bb93659f99c35d5.js"></script>
             </div>
           </div>
         </div>
@@ -217,5 +187,5 @@
     <!-- End of Salesforce1 section -->
 
   </div>
-  <script src="resources/js/prism.js"></script>
 </body>
+ <script src="resources/js/script.js"></script>
