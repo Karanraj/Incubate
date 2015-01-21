@@ -2,7 +2,7 @@
  /*Gist Custom Style */
  /*Thumb rule save all .git file as .java */
  .gist .line-numbers{color:#AAA;text-align:right;background-color:#FFF;border-right:1px solid #EEE;line-height:2.12;padding:.5em}
-.gist .line-data{background-color:#000; font-size:14px;}
+.gist .line-data{background-color:#000; font-size:16px;}
 .gist .pl-s1 .pl-s2,.gist .pl-smi,.gist .pl-smp,.gist .pl-stj,.gist .pl-vo,.gist .pl-vpf,.gist .line-pre{color:#FFF}
     
     
