@@ -25,16 +25,26 @@ public class QuestionDetailsController {
     {
         //get each variable through Map
         questionId = ApexHelper.GetValueFromParam('question'); 
-        questionTitle = ApexHelper.GetValueFromParam('question_title');
-        if(questionId == null || questionId == '' ){
-            ErrorHandler.showError('Please pass Question Record ID in your request' + questionId);
+       // questionTitle = ApexHelper.GetValueFromParam('question_title');
+        if(questionId == '' && questionTitle == '' ){
+            ErrorHandler.showError('Please pass Question Record in your request' + questionId);
             return;   
-         }
-        try{
-            questionTitleBasedonId = ApexHelper.GetQuestionAndAnswerFromId(questionId);
         }
-        Catch(Exception ex){
-          ErrorHandler.showWarning('Question Record you request doesn\'t exist ' + questionId);
+        else if(questionId != null){
+            try{
+                questionTitleBasedonId = ApexHelper.GetQuestionAndAnswerFromId(questionId);
+            }Catch(Exception ex){
+                ErrorHandler.showWarning('Question Record you requested doesn\'t exist ' + questionId);
+            }
         }
+        /*else if(questionTitle != null ){
+            try{
+                questionTitleBasedonId = ApexHelper.GetQuestionAndAnswerFromId(questionTitle);
+            }Catch(Exception ex){
+                ErrorHandler.showWarning('Question Record you requested doesn\'t exist ' + questionId);
+            }
+        }*/
+
+        
     }
  }

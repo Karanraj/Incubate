@@ -22,10 +22,10 @@ global without sharing  class ApexHelper{
     }      
     // ==============================================================================
     // Page Methods  - Method to get the Question and Answer based on Id 
-    // Parameters - Id 
+    // Parameters - Id
     // Return - Faq
     // ==============================================================================
     public static faq__c GetQuestionAndAnswerFromId(String faqId){
-        return [Select id,name,question__c,answer__c,type__c, Long_Text_Code__c,(select id,Answer_Part_1__c,Answer_Part_2__c, Answer_Part_3__c, Answer_Gist_Part_1__c, Answer_Gist_Part_2__c, Answer_Gist_Part_3__c from FAQAnswers__r) from faq__c where Id =: faqId];
+        return [Select id,name,question__c,answer__c,type__c,Question_Param__c, Long_Text_Code__c,(select id,Answer_Part_1__c,Answer_Part_2__c, Answer_Part_3__c, Answer_Gist_Part_1__c, Answer_Gist_Part_2__c, Answer_Gist_Part_3__c from FAQAnswers__r) from faq__c where Id =: faqId or Question_Param__c =: faqId];
     }
 }

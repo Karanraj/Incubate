@@ -55,7 +55,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-                    <a href="/apex/dynmicPOC?question={!apex.Id}" target="_blank">{!count}. {!apex.question__c}</a>
+                    <a href="/apex/dynmicPOC?question={!apex.Question_Param__c}" target="_blank">{!count}. {!apex.question__c}</a>
                 </h4>
           </div>
           
@@ -84,7 +84,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-                    <a href="/apex/dynmicPOC?question={!vf.Id}" target="_blank">{!vfcount}. {!vf.question__c}</a>
+                    <a href="/apex/dynmicPOC?question={!vf.Question_Param__c}" target="_blank">{!vfcount}. {!vf.question__c}</a>
                 </h4>
           </div>
           
@@ -113,7 +113,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-                    <a href="/apex/dynmicPOC?question={!s1.Name}" target="_blank">{!s1count}. {!s1.question__c}</a>
+                  <a href="/apex/dynmicPOC?question={!s1.Question_Param__c}" target="_blank">{!s1count}. {!s1.question__c}</a>
                 </h4>
           </div>
           
