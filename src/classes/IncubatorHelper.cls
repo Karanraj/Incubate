@@ -16,7 +16,7 @@ public class IncubatorHelper {
 
     public static List<faq__c> GetQuestionList()
     {
-        return [Select Id,Name,Question__c,Answer__c,Type__c,Question_Param__c from faq__c];
+        return [Select Id,Name,Type__c, QuestionTitle__c ,Question_Param__c from faq__c];
     }
 
     // ==============================================================================
@@ -28,7 +28,7 @@ public class IncubatorHelper {
         {
             try
             {
-                toReturn=[Select Id,Name,Question__c,Answer__c,Type__c,Question_Param__c, Long_Text_Code__c,(select Id,Answer_Part_1__c,Answer_Part_2__c, Answer_Part_3__c, Answer_Gist_Part_1__c, Answer_Gist_Part_2__c, Answer_Gist_Part_3__c from FAQAnswers__r) from Faq__c where Id =: faqId or Question_Param__c =: faqId];
+                toReturn=[Select Id,Name, QuestionTitle__c,Type__c,Question_Param__c,(select Id,Answer_Part_1__c,Answer_Part_2__c, Answer_Part_3__c, Answer_Gist_Part_1__c, Answer_Gist_Part_2__c, Answer_Gist_Part_3__c from FAQAnswers__r) from Faq__c where Id =: faqId or Question_Param__c =: faqId];
             } Catch(QueryException e)
             {
                 ErrorHandler.showWarning(e.getMessage());
@@ -44,7 +44,7 @@ public class IncubatorHelper {
     public static List<faq__c>  getRelatedQuestion(string currentQuestionId, string questionType, Integer recordLimit)
     {
         //Dymanic Query
-        string query  = 'SELECT id,Question__c,Question_Param__c, Type__c FROM faq__c';
+        string query  = 'SELECT id,QuestionTitle__c,Question_Param__c, Type__c FROM faq__c';
         query +=' WHERE Question_Param__c !=: currentQuestionId AND Type__c =: questionType LIMIT: recordLimit';
         //Initiate the list to reuturn
         List<faq__c> relatedQuestionList = Database.query(query);

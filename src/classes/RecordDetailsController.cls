@@ -28,7 +28,7 @@ public class RecordDetailsController {
             ErrorHandler.showError('Requested URL doesn\'t match any record. Please contact administrator.');
         questionTitleBasedOnId = IncubatorHelper.GetQuestionAndAnswerFromId(ApexUtil.GetValueFromParam('question'));
         if(questionTitleBasedOnId != null)
-          relatedQuestions = IncubatorHelper.getRelatedQuestion(questionTitleBasedOnId.Question_param__c, questionTitleBasedOnId.Type__c, 3);
+          relatedQuestions = IncubatorHelper.getRelatedQuestion(questionTitleBasedOnId.Question_param__c, questionTitleBasedOnId.Type__c, 5);
         
     }
  }

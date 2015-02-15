@@ -14,8 +14,12 @@
 </head>
 <script type="text/javascript">
  $(document).ready(function() {
-   $('#apexTable').DataTable();
-   $('#vfTable').DataTable();
+   $('#apexTable').DataTable({
+     "iDisplayLength": 50
+   });
+   $('#vfTable').DataTable({
+    "iDisplayLength": 50
+   });
  });
 </script>
 <body>
@@ -70,7 +74,7 @@
         <tbody>
         <apex:repeat value="{!apexFAQ}" var="apex">
          <tr>
-         <td><a href="/apex/recordDetails?question={!apex.Question_Param__c}" target="_blank">{!count}. {!apex.Question__c}</a></td>
+         <td><a href="/apex/recordDetails?question={!apex.Question_Param__c}" target="_blank">{!count}.{!apex.QuestionTitle__c}</a></td>
          <td>{!apex.Type__c}</td>       
          </tr>
          <apex:variable var="count" value="{!count + 1}"/>
@@ -92,7 +96,7 @@
         <tbody>
         <apex:repeat value="{!visualforceFAQ}" var="vf">
          <tr>
-         <td><a href="/apex/recordDetails?question={!vf.Question_Param__c}" target="_blank">{!vfcount}. {!vf.Question__c}</a></td>
+         <td><a href="/apex/recordDetails?question={!vf.Question_Param__c}" target="_blank">{!vfcount}.{!vf.QuestionTitle__c}</a></td>
          <td>{!vf.Type__c}</td>       
          </tr>
          <apex:variable var="vfcount" value="{!vfcount + 1}"/>

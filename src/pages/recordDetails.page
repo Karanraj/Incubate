@@ -36,7 +36,7 @@
         <div class="col-xs-12 col-sm-8">
             <apex:pageMessages id="showmsg"></apex:pageMessages>
             <apex:repeat value="{!questionTitleBasedonId}" var="faq">
-                <h1>{!faq.Question__c}</h1>
+                <h1>{!faq.QuestionTitle__c}</h1>
                 <br/> <br/>
                     <apex:repeat value="{!faq.FAQAnswers__r}" var="ans">
                        
@@ -78,7 +78,7 @@
             <div class="panel-heading" style="font-variant:small-caps;font-size: 18px;">Similar Questions</div>
               <ol class="list-group">
                 <apex:repeat value="{!relatedQuestions}" var="relqs">
-                <li><a href="/apex/recordDetails?question={!relqs.Question_Param__c}">{!relqs.Question__c}</a></li>
+                <li><a href="/apex/recordDetails?question={!relqs.Question_Param__c}">{!relqs.QuestionTitle__c}</a></li>
                 </apex:repeat>
             </ol>
             <p></p>
