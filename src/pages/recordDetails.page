@@ -1,4 +1,4 @@
-<apex:page controller="QuestionDetailsController" showHeader="false" docType="html-5.0" standardStylesheets="true">
+<apex:page controller="RecordDetailsController" showHeader="false" docType="html-5.0" standardStylesheets="true">
    <head>
      
       <meta charset="UTF-8" />
@@ -19,7 +19,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="https://c.ap2.visual.force.com/apex/home" style="color: #fff;line-height: 21px;font-size: 21px;font: font: bold 28px/1.2em 'Source Sans Pro', arial, sans-serif;">Force Incubator | Salesforce FAQ for Interview
-</a>
+            </a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -75,10 +75,11 @@
 
         <div class="panel panel-default">
             <!-- Default panel contents -->
-            <div class="panel-heading" style="font-variant:small-caps;font-size: 18px;">modules</div>
+            <div class="panel-heading" style="font-variant:small-caps;font-size: 18px;">Similar Questions</div>
               <ol class="list-group">
-                <li><a href="https://c.ap2.visual.force.com/apex/incubate">Home</a></li>
-                <li><a href="https://c.ap2.visual.force.com/apex/questionListPOC">Questions List</a></li>
+                <apex:repeat value="{!relatedQuestions}" var="relqs">
+                <li><a href="/apex/recordDetails?question={!relqs.Question_Param__c}">{!relqs.Question__c}</a></li>
+                </apex:repeat>
             </ol>
             <p></p>
         </div>

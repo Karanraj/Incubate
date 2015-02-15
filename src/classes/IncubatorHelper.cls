@@ -5,40 +5,26 @@
  * Feb : 2015
  **/
 
-global without sharing  class ApexHelper{
-    
-    // ==============================================================================
-    // Method Usage  - Declaring Methods in HelperClass can be used repetedly, promotes 
-    // code re-usage
-    // ==============================================================================
-    public static string GetValueFromParam(string ParamKey)
-    {
-        string toReturn='';
-        if(ApexPages.currentPage().getParameters().containsKey(ParamKey))
-        {            
-            toReturn=ApexPages.currentPage().getParameters().get(ParamKey);
-        }
-        return toReturn;
-    }      
-    
+ /*
+* IncubatorProject Helper Class - This class cover method commonly shared accors the Incubator Project
+*/
+public class IncubatorHelper {
 
-    public static Boolean isValueValid(String value)
+    // ==============================================================================
+    // Method Usage  - Method to get Questions records
+    // ==============================================================================
+
+    public static List<faq__c> GetQuestionList()
     {
-        //If the value passed is empty - return false 
-        Boolean toReturn = true;
-        if(String.isEmpty(value))
-            toReturn=false;
-        return toReturn;
+        return [Select Id,Name,Question__c,Answer__c,Type__c,Question_Param__c from faq__c];
     }
-
 
     // ==============================================================================
     // Method Usage  - Method to get the Question and Answer based on Id 
     // ==============================================================================
-   
     public static faq__c GetQuestionAndAnswerFromId(String faqId){
         faq__c toReturn=null;
-        if(isvalueValid(faqId))
+        if(ApexUtil.isvalueValid(faqId))
         {
             try
             {
@@ -50,14 +36,19 @@ global without sharing  class ApexHelper{
         }
         return toReturn;
     }
-    
+
     // ==============================================================================
-    // Method Usage  - Method to get Questions records
+    // Method Usage  - Method to get related questions 
     // ==============================================================================
 
-    public static List<faq__c> GetQuestionList(){
-        return [Select Id,Name,Question__c,Answer__c,Type__c,Question_Param__c from faq__c];
+    public static List<faq__c>  getRelatedQuestion(string currentQuestionId, string questionType, Integer recordLimit)
+    {
+        //Dymanic Query
+        string query  = 'SELECT id,Question__c,Question_Param__c, Type__c FROM faq__c';
+        query +=' WHERE Question_Param__c !=: currentQuestionId AND Type__c =: questionType LIMIT: recordLimit';
+        //Initiate the list to reuturn
+        List<faq__c> relatedQuestionList = Database.query(query);
+        return relatedQuestionList;
     }
-   
 
 }
