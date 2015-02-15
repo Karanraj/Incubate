@@ -1,0 +1,125 @@
+<apex:page sidebar="false" showHeader="false" docType="html-5.0" Controller="HomefaqController">
+<head>
+  <meta charset="UTF-8" />
+  <title>Salesforce FAQ</title>
+  
+   <link rel="stylesheet" href="/resource/Incubator/resources/styles/bootstrap.min.css" />
+      <link rel="stylesheet" href="/resource/Incubator/resources/styles/bootstrap-theme.min.css" />
+      <link rel="stylesheet" type="text/css" href="/resource/Incubator/resources/styles/dataTablesbootstrap.css" />
+      <script src="/resource/Incubator/resources/js/jquery.min.js"></script>
+      <script type="text/javascript" src="/resource/Incubator/resources/js/jquerydataTables.min.js"></script>
+      <script src="/resource/Incubator/resources/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="/resource/Incubator/resources/js/dataTablesbootstrap.js"></script>
+      
+</head>
+<script type="text/javascript">
+ $(document).ready(function() {
+   $('#apexTable').DataTable();
+   $('#vfTable').DataTable();
+ });
+</script>
+<body>
+  <!-- Static navbar -->
+  <nav class="navbar navbar-fixed-top" style="background-color: #01344e;">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/apex/index" style="color: #fff;line-height: 21px;font-size: 21px;font: font: bold 28px/1.2em 'Source Sans Pro', arial, sans-serif;">Force Incubator | Salesforce FAQ for Interview </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://developer.salesforce.com/trailhead">Trailhead</a>
+          </li>
+          <li><a href="http://salesforce.stackexchange.com/">StackExchange</a>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>
+  <div class="container">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#sectionApex">APEX</a>
+    </li>
+    <li><a data-toggle="tab" href="#sectionVF">VISUALFORCE</a>
+    </li>
+    <li><a data-toggle="tab" href="#sectionTips">Tips and Tricks</a>
+    </li>
+  </ul>
+  <!-- end of Header tab -->
+
+  <!-- Start of Apex section -->
+  <div class="tab-content">
+    <div id="sectionApex" class="tab-pane fade in active">
+    <br/>
+      <apex:variable var="count" value="{!1}"/>
+        
+        <table id="apexTable" class="table table-striped" cellspacing="0" width="100%">
+        <thead>
+         <tr>
+         <th>Question</th>
+         <th>Type</th>
+         </tr>        
+        </thead>
+        <tbody>
+        <apex:repeat value="{!apexFAQ}" var="apex">
+         <tr>
+         <td><a href="/apex/recordDetails?question={!apex.Question_Param__c}" target="_blank">{!count}. {!apex.Question__c}</a></td>
+         <td>{!apex.Type__c}</td>       
+         </tr>
+         <apex:variable var="count" value="{!count + 1}"/>
+       </apex:repeat>
+        </tbody>
+        </table>  
+       </div>
+        <div id="sectionVF" class="tab-pane fade">
+          <br/>
+      <apex:variable var="vfcount" value="{!1}"/>
+        
+        <table id="vfTable" class="table table-striped" cellspacing="0" width="100%">
+        <thead>
+         <tr>
+         <th>Question</th>
+         <th>Type</th>
+         </tr>        
+        </thead>
+        <tbody>
+        <apex:repeat value="{!visualforceFAQ}" var="vf">
+         <tr>
+         <td><a href="/apex/recordDetails?question={!vf.Question_Param__c}" target="_blank">{!vfcount}. {!vf.Question__c}</a></td>
+         <td>{!vf.Type__c}</td>       
+         </tr>
+         <apex:variable var="vfcount" value="{!vfcount + 1}"/>
+       </apex:repeat>
+        </tbody>
+        </table>  
+        
+       </div>
+       <div id="sectionTips" class="tab-pane fade">
+       </div>
+       
+       </div> 
+  </div> 
+ <style>
+   body 
+   {
+    padding-top: 65px;
+    font-size: 140%;
+   }
+   .navbar-default 
+   {
+     background-color: aquamarine;
+     border-color: aquamarine;
+   }
+   .container {
+     color: lightcoral;
+   }
+   </style>
+</body>
+</apex:page>

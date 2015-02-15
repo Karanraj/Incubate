@@ -1,0 +1,112 @@
+<apex:page showHeader="false" sidebar="false" docType="html-5.0" standardStylesheets="false">
+<head>
+  
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  
+  <!--Importing BootStrap CDN resource-->
+  <link rel="stylesheet" href="/resource/Incubator/resources/styles/bootstrap.min.css" />
+  <link rel="stylesheet" href="/resource/Incubator/resources/styles/font-awesome.min.css" />
+</head>
+
+<body>
+  <div class="bs-example">
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div style="display:table">
+            <span class="fa-stack fa-lg">
+                  <i class="fa fa-cog fa-spin fa-stack-2x"></i>
+                  </span>
+            <div style="display: table-cell;vertical-align: middle;">
+              <h1>Incubator</h1>
+              <p>Your Daily Dairy of Salesforce Interview FAQ and Resources</p>
+              <p><a class="btn btn-primary btn-lg" style="background-color: transparent;color: #00A1E1;margin-top: 8px;" href="/apex/home" role="button">Start Now</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background-color: #f4f4f4;margin-top: -30px;border-bottom: solid 1px #ddd;padding:12px 0 6px 0;margin-bottom:30px;">
+      <div class="container">
+        <div class="row" style="text-align: center">
+
+          <!--Share button for twitter-->
+          <div style="margin-left: 30px;">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-text="Salesforce FAQ Diary" data-via="OyeCode" data-size="large" data-hashtags="Salesforce">Tweet</a>
+            <script>
+              ! function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0],
+                  p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                  js = d.createElement(s);
+                  js.id = id;
+                  js.src = p + '://platform.twitter.com/widgets.js';
+                  fjs.parentNode.insertBefore(js, fjs);
+                }
+              }(document, 'script', 'twitter-wjs');
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <p>This page is designed to bring down collection of FAQ you needed to prepare for interviews, at same time talk about features and practices through multiple resources like stack-exchange for best answers and articles.
+        <h2>What You can do :</h2>
+        <ul>
+          <li>
+            <p>Incubator is diary of good resources, you can fork project to add your question and answer</p>
+          </li>
+        </ul>
+       </p>
+       
+       <ul>
+          <!--Follow Oyecode button -->
+          <a href="https://twitter.com/OyeCode" class="twitter-follow-button" data-show-count="true" data-size="large" data-lang="en">Follow 
+            @Oyecode</a>
+          <script>
+            ! function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                p = /^http:/.test(d.location) ? 'http' : 'https';
+              if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+              }
+            }(document, 'script', 'twitter-wjs');
+          </script>
+
+          <!-- Follow Karanraj button -->
+          <a href="https://twitter.com/Karanrajs" class="twitter-follow-button" data-show-count="true" data-size="large" data-lang="en">Follow 
+            @Karnarajs</a>
+          <script>
+            ! function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                p = /^http:/.test(d.location) ? 'http' : 'https';
+              if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+              }
+            }(document, 'script', 'twitter-wjs');
+          </script>
+          <!-- End of Follow button -->
+
+        </ul>
+
+    </div>
+    <div class="container">
+      <div id="footer">
+        <p class="text-muted">Incubator, 2015</p>
+      </div>
+      <!-- Site footer -->
+    </div>
+    </div>
+</body>
+</apex:page>

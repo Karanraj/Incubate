@@ -1,0 +1,19 @@
+{
+    "username": "incubator@salesforce.com", 
+    "environment": "production", 
+    "project_name": "Incubator Salesforce", 
+    "workspace": "/Users/harshit/Documents/workspace", 
+    "org_url": "", 
+    "namespace": "", 
+    "id": "D9UU7B2FULNOVM64JR5GBVJ7K4VXRZ02", 
+    "metadata_container": "1dc28000000CfxQAAS", 
+    "subscription": [
+        "ApexClass", 
+        "ApexComponent", 
+        "ApexPage", 
+        "ApexTrigger", 
+        "StaticResource", 
+        "CustomObject", 
+        "Profile"
+    ]
+}

@@ -1,0 +1,108 @@
+<!-- *
+   * Copyright (c) - MIT License
+   * Author - Harshit Pandey 
+   * Author - Karanraj ShankarNarayan
+   * Feb : 2015
+       * Page designing using Javascript Remote Objects 
+       -->
+<apex:page showHeader="false" sidebar="false">
+   <!-- DataModel declaration -->
+   <apex:remoteObjects >
+      <apex:remoteObjectModel name="faq__c" jsShorthand="faq" fields="Name,Id,Question__c,Question_Param__c,Type__c">
+      </apex:remoteObjectModel>
+   </apex:remoteObjects>
+   <head>
+      <meta charset="UTF-8" />
+      <title>Salesforce FAQ</title>
+      <!-- Import Static Resources -->
+      <link rel="stylesheet" href="/resource/Incubator/resources/styles/bootstrap.min.css" />
+      <link rel="stylesheet" href="/resource/Incubator/resources/styles/bootstrap-theme.min.css" />
+      <link rel="stylesheet" type="text/css" href="/resource/Incubator/resources/styles/dataTablesbootstrap.css" />
+      <script src="/resource/Incubator/resources/js/jquery.min.js"></script>
+      <script type="text/javascript" src="/resource/Incubator/resources/js/jquerydataTables.min.js"></script>
+      <script src="/resource/Incubator/resources/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="/resource/Incubator/resources/js/dataTablesbootstrap.js"></script>
+   </head>
+   <!--Javascript to populate data -->
+   <script  type="text/javascript">
+      $(document).ready(function() {
+          
+          //Grab question
+          var questionDataModel = new SObjectModel.faq();
+          questionDataModel.retrieve({limit:100},function(err, records){
+              
+              //Lets talk about error handling 
+              if(err) alert(err.message);
+              else {
+                  // Create the table and add columns
+                  var table = $('<table class="table table-striped" cellspacing="0" width="100%"></table>');
+                  var thead = $('<thead></thead>');
+                  var theadtr = $('<tr></tr>');         
+                  table.appendTo('#apexList');          
+                  table.append(thead);
+                  thead.append(theadtr);
+                  theadtr.append($('<th>Question</th><th>Type</th>'));
+                  var tbody = $('<tbody></tbody>');
+                  table.append(tbody);
+                  records.forEach(function(record) {   
+                      var tbodytr = $('<tr></tr>');         
+                      tbody.append(tbodytr);
+                      tbodytr.append($('<td><a href="/apex/dynmicPOC?question=' + record.get("Question_Param__c") +'" target="_blank">'+record.get("Question__c")+'</a></td><td>'+record.get("Type__c")+'</td>'));
+                  });
+                  
+                  //JQuery DataTable!
+                  var dataTable = table.DataTable();
+                }
+          });   
+      });
+   </script> 
+   <body>
+      <!-- Static navbar -->
+      <nav class="navbar navbar-fixed-top" style="background-color: #01344e;">
+         <div class="container">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="/apex/Incubate" style="color: #fff;line-height: 21px;font-size: 21px;font: font: bold 28px/1.2em 'Source Sans Pro', arial, sans-serif;">Force Incubator | Salesforce FAQ for Interview </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+               <ul class="nav navbar-nav navbar-right">
+                  <li><a href="http://developer.salesforce.com/trailhead">Trailhead</a></li>
+                  <li><a href="http://salesforce.stackexchange.com/">StackExchange</a></li>
+               </ul>
+            </div>
+            <!--/.nav-collapse -->
+         </div>
+         <!--/.container-fluid -->
+      </nav>
+      <div class="container">
+         <!-- Header tab
+            <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#sectionApex">APEX</a>
+            </li>
+            <li><a data-toggle="tab" href="#sectionVF">VISUALFORCE</a>
+            </li>
+            <li><a data-toggle="tab" href="#sectionS1">Salesforce1 Mobile</a>
+            </li>
+            </ul>
+            end of Header tab -->
+         <div id="apexList">  
+         </div>
+      </div>
+      <style>
+         body {padding-top: 65px;font-size: 140%;}
+         .navbar-default 
+         {
+            background-color: aquamarine;
+            border-color: aquamarine;
+         }
+         .container {
+           color: lightcoral;
+            }
+      </style>
+   </body>
+</apex:page>
