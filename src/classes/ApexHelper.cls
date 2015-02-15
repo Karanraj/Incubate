@@ -1,11 +1,14 @@
-/*
-* Helper Class - Helper class for the FAQ visualforce page 
-*/
+/**
+ * Copyright (c) - MIT License
+ * Author - Harshit Pandey 
+ * Author - Karanraj ShankarNarayan
+ * Feb : 2015
+ **/
 
 global without sharing  class ApexHelper{
     
     // ==============================================================================
-    // Page Methods  - Declaring Methods in HelperClass can be used repetedly, promotes 
+    // Method Usage  - Declaring Methods in HelperClass can be used repetedly, promotes 
     // code re-usage
     // ==============================================================================
     public static string GetValueFromParam(string ParamKey)
@@ -18,6 +21,7 @@ global without sharing  class ApexHelper{
         return toReturn;
     }      
     
+
     public static Boolean isValueValid(String value)
     {
         //If the value passed is empty - return false 
@@ -26,10 +30,10 @@ global without sharing  class ApexHelper{
             toReturn=false;
         return toReturn;
     }
+
+
     // ==============================================================================
-    // Page Methods  - Method to get the Question and Answer based on Id 
-    // Parameters - Id
-    // Return - Faq
+    // Method Usage  - Method to get the Question and Answer based on Id 
     // ==============================================================================
    
     public static faq__c GetQuestionAndAnswerFromId(String faqId){
@@ -38,7 +42,7 @@ global without sharing  class ApexHelper{
         {
             try
             {
-                toReturn=[Select id,name,question__c,answer__c,type__c,Question_Param__c, Long_Text_Code__c,(select id,Answer_Part_1__c,Answer_Part_2__c, Answer_Part_3__c, Answer_Gist_Part_1__c, Answer_Gist_Part_2__c, Answer_Gist_Part_3__c from FAQAnswers__r) from faq__c where Id =: faqId or Question_Param__c =: faqId];
+                toReturn=[Select Id,Name,Question__c,Answer__c,Type__c,Question_Param__c, Long_Text_Code__c,(select Id,Answer_Part_1__c,Answer_Part_2__c, Answer_Part_3__c, Answer_Gist_Part_1__c, Answer_Gist_Part_2__c, Answer_Gist_Part_3__c from FAQAnswers__r) from Faq__c where Id =: faqId or Question_Param__c =: faqId];
             } Catch(QueryException e)
             {
                 ErrorHandler.showWarning(e.getMessage());
@@ -46,4 +50,14 @@ global without sharing  class ApexHelper{
         }
         return toReturn;
     }
+    
+    // ==============================================================================
+    // Method Usage  - Method to get Questions records
+    // ==============================================================================
+
+    public static List<faq__c> GetQuestionList(){
+        return [Select Id,Name,Question__c,Answer__c,Type__c,Question_Param__c from faq__c];
+    }
+   
+
 }

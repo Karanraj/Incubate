@@ -9,7 +9,7 @@
 * Controller Class - Class for Reading URL through Map 
 */
  
-public class RecordDetailsController {
+public class QuestionsHelper {
     //*********************************************************************************
     // *Tip : Get the PageParameters in a Map and get key,values pairs smoothly of this 
     //*********************************************************************************
@@ -24,15 +24,4 @@ public class RecordDetailsController {
     
     //Map of PageParameters 
     private Map<string,string> pageParams=ApexPages.currentPage().getParameters();
-    
-    //Set the variable in Constructor
-    public QuestionDetailsController() 
-    {
-        //get each variable through Map
-        
-        if(String.isEmpty(ApexHelper.GetValueFromParam('question')))
-            ErrorHandler.showError('Requested URL doesn\'t match any record. Please contact administrator.');
-        questionTitleBasedOnId = ApexHelper.GetQuestionAndAnswerFromId(ApexHelper.GetValueFromParam('question'));
-         
-    }
- }
+  }

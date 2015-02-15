@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>32.0</apiVersion>
-    <availableInTouch>false</availableInTouch>
+    <apiVersion>31.0</apiVersion>
+    <availableInTouch>true</availableInTouch>
     <confirmationTokenRequired>false</confirmationTokenRequired>
-    <description>Mocking model to show question details based off url</description>
-    <label>dynmicPOC</label>
+    <label>index</label>
     <packageVersions>
         <majorNumber>1</majorNumber>
         <minorNumber>6</minorNumber>

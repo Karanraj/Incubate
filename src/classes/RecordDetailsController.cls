@@ -26,7 +26,7 @@ public class RecordDetailsController {
     private Map<string,string> pageParams=ApexPages.currentPage().getParameters();
     
     //Set the variable in Constructor
-    public QuestionDetailsController() 
+    public RecordDetailsController() 
     {
         //get each variable through Map
         

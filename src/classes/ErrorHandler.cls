@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) - MIT License
+ * Author - Harshit Pandey 
+ * Author - Karanraj ShankarNarayan
+ * Feb : 2015
+ **/
+
 //=====================================================================
 //@Apex Code : Error Handler
 //Used for displaying standard salesforce error messages

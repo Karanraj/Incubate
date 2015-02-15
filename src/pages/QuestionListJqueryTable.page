@@ -1,5 +1,13 @@
 <apex:page showHeader="true" sidebar="true" standardStylesheets="false">
 <head>
+  <style>   .navbar-default 
+         {
+            background-color: aquamarine;
+            border-color: aquamarine;
+         }
+         .container {
+           color: lightcoral;
+            } </style>
   <meta charset="UTF-8" />
   <title>Salesforce FAQ</title>
   <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css" />
